@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://cmjoyyfdaga6t"]
+
+[ext_resource type="PackedScene" uid="uid://cddehtj4dfs8f" path="res://elements/king_character/king_character.tscn" id="1_hbuws"]
+[ext_resource type="Script" path="res://components/control_component.gd" id="2_1h88v"]
+[ext_resource type="Script" path="res://components/gravity_component.gd" id="3_lswvi"]
+[ext_resource type="Script" path="res://components/face_king_component.gd" id="4_oqggt"]
+
+[node name="KingPlayer" instance=ExtResource("1_hbuws")]
+
+[node name="ControlComponent" type="Node" parent="." index="3" node_paths=PackedStringArray("character")]
+script = ExtResource("2_1h88v")
+character = NodePath("..")
+
+[node name="GravityComponent" type="Node" parent="." index="4" node_paths=PackedStringArray("character")]
+script = ExtResource("3_lswvi")
+character = NodePath("..")
+
+[node name="FaceKingComponent" type="Node" parent="." index="5" node_paths=PackedStringArray("animated_sprite", "hitbox_shape", "character")]
+script = ExtResource("4_oqggt")
+animated_sprite = NodePath("../KingNode2D/AnimatedSprite2D")
+hitbox_shape = NodePath("../HitboxArea/HitboxShape")
+character = NodePath("..")
+
+[editable path="KingNode2D"]

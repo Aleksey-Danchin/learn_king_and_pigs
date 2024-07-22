@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://cddehtj4dfs8f"]
+
+[ext_resource type="PackedScene" uid="uid://df4y65ykibps2" path="res://elements/king_node/king_node.tscn" id="2_lwyaw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mapyh"]
+size = Vector2(16, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8hfe7"]
+size = Vector2(38, 38)
+
+[node name="KingCharacter" type="CharacterBody2D"]
+
+[node name="KingNode2D" parent="." instance=ExtResource("2_lwyaw")]
+
+[node name="AnimatedSprite2D" parent="KingNode2D" index="0"]
+position = Vector2(7, -4)
+
+[node name="GravityShape" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_mapyh")
+debug_color = Color(0.323175, 0.528195, 0.880575, 0.42)
+
+[node name="HitboxArea" type="Area2D" parent="."]
+
+[node name="HitboxShape" type="CollisionShape2D" parent="HitboxArea"]
+position = Vector2(27, -8)
+shape = SubResource("RectangleShape2D_8hfe7")
+debug_color = Color(1, 0, 0, 0.42)
+
+[editable path="KingNode2D"]
