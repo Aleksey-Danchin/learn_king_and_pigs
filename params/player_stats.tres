@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ResourceStats" load_steps=2 format=3 uid="uid://ciseraisye0c"]
+
+[ext_resource type="Script" path="res://resources/resource_stats.gd" id="1_i23pe"]
+
+[resource]
+script = ExtResource("1_i23pe")
+health = 2
+speed = 100.0
+jump_velocity = -200.0
+is_patrolable = false
+is_attackable = false
+is_chaseable = true
+attack_damage = 1
+attack_cooldown = 1.5

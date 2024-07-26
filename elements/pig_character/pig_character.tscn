@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://bgla384lo33p4"]
+
+[ext_resource type="PackedScene" uid="uid://hrcsrhu2bjch" path="res://elements/pig_node/pig_node.tscn" id="1_25k4x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_klvvs"]
+size = Vector2(13.5, 15.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_st7yj"]
+size = Vector2(12, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_djjdi"]
+size = Vector2(51, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ssei"]
+size = Vector2(57, 10)
+
+[node name="PigCharacter" type="CharacterBody2D"]
+slide_on_ceiling = false
+
+[node name="PigNode" parent="." instance=ExtResource("1_25k4x")]
+
+[node name="AnimatedSprite2D" parent="PigNode" index="0"]
+position = Vector2(-3, -6)
+animation = &"hit"
+frame = 3
+
+[node name="GravityShape" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_klvvs")
+
+[node name="HitArea" type="Area2D" parent="."]
+
+[node name="HitShape" type="CollisionShape2D" parent="HitArea"]
+position = Vector2(-13, -6)
+shape = SubResource("RectangleShape2D_st7yj")
+debug_color = Color(1, 0, 0, 0.42)
+
+[node name="DetectArea" type="Area2D" parent="."]
+
+[node name="DetectShape" type="CollisionShape2D" parent="DetectArea"]
+position = Vector2(-44.5, -5.5)
+shape = SubResource("RectangleShape2D_djjdi")
+debug_color = Color(0.447695, 0.596833, 0, 0.42)
+
+[node name="BackArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BackArea"]
+position = Vector2(35.5, -5)
+shape = SubResource("RectangleShape2D_1ssei")
+debug_color = Color(0.495728, 0, 0.511719, 0.42)
+
+[editable path="PigNode"]

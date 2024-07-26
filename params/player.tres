@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="StatsResource" load_steps=2 format=3 uid="uid://boukqt6he5cgu"]
+
+[ext_resource type="Script" path="res://resources/stats.gd" id="1_0fgkb"]
+
+[resource]
+script = ExtResource("1_0fgkb")
+dic = {
+"jump": -200.0,
+"speed": 200.0
+}

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bomtbvrcq866w"]
+
+[ext_resource type="PackedScene" uid="uid://cddehtj4dfs8f" path="res://elements/king_character/king_character.tscn" id="1_5ba2e"]
+[ext_resource type="Script" path="res://elements/king_character/king_test.gd" id="2_77kjr"]
+
+[node name="KingCharacter" instance=ExtResource("1_5ba2e")]
+script = ExtResource("2_77kjr")
+
+[node name="Camera2D" type="Camera2D" parent="." index="3"]
+
+[editable path="KingNode2D"]
